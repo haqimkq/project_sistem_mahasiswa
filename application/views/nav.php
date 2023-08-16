@@ -9,14 +9,20 @@
    .headmenu{
       display: flex;
       align-items: center;
+      flex-direction: column;
       padding: 1em 0.5em;
       border-bottom: 1px solid rgb(230,230,230);
       margin-bottom: 1em;
-      gap: 1em;
+   }
+   .headmenu>div>h3{
+      line-height: 1.2;
+   }
+   .headmenu>img{
+      width: 80px;
+      height: 80px;
    }
    .headmenu>div>p{
       font-size: 0.8em;
-      margin-top: 0.3em;
       opacity: 0.6;
    }
    .btnlogout:hover {
