@@ -208,7 +208,7 @@
 				columns: [
 					{ data: 'nama', title: 'Nama' },
 					{ data: 'nomor_taruna', title: 'NPT' },
-					{ data: 'namakota', title: 'Tempat Lahir' },
+					{ data: 'tempat_lahir', title: 'Tempat Lahir' },
 					{ data: 'tanggal_lahir', title: 'Tanggal Lahir'},
 					{ data: 'namaprodi', title: 'Program Studi'},
 					{ 
@@ -334,12 +334,7 @@
 						</div>
 						<div className="formel">
 							<label htmlFor="tempat_lahir">Tempat Lahir</label>
-							<select name="tempat_lahir" required>
-								<option value="">--- Pilih Kota ---</option>
-								{listKota.map((it, index) => (
-									<option key={index} value={it.id}>{it.nama}</option>
-								))}
-							</select>
+							<input name="tempat_lahir" placeholder="e.g. Palembang" required type="text" />
 						</div>
 					</div>
 					<div className="wrap nopad">
@@ -358,7 +353,7 @@
 						</div>
 						<div className="formel">
 							<label htmlFor="foto">Foto Profil</label>
-							<input name="foto" type="file" onChange={handleFotoChange} required placeholder="e.g. Foto" />
+							<input name="foto" type="file" onChange={handleFotoChange} placeholder="e.g. Foto" />
 						</div>
 					</div>
 					<div className="btnarea">

@@ -51,7 +51,8 @@
 		padding: 1em;
 	}
 	.boxcards>div>h3{
-		font-size: 1.3em
+		font-size: 1.3em;
+		line-height: 0.8;
 	}
 	.boxcards>img{
 		width:8em;

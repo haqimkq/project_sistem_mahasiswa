@@ -199,6 +199,10 @@ table>thead>tr>th {
    border-radius: 0.4em;
 }
 
+.formel>select {
+   padding: 0.9em;
+}
+
 .formel>input:focus,
 .formel>select:focus,
 input:focus,
