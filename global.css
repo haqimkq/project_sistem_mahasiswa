@@ -1,0 +1,267 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600&display=swap");
+
+* {
+   box-sizing: border-box;
+   font-family: "Inter", sans-serif;
+   font-size: 15px;
+   padding: 0;
+   color: #27374d;
+   margin: 0;
+}
+
+a {
+   color: inherit;
+   text-decoration: none;
+}
+
+i {
+   display: inline-block;
+   margin-right: 0.4em;
+   color: inherit;
+}
+
+html {
+   scroll-behavior: smooth;
+}
+
+.navigation {
+   position: fixed;
+   background: transparent;
+   height: 100%;
+   width: 15em;
+}
+
+.bggreen {
+   background: #1b9c85;
+   color: white;
+}
+
+.navigation>div {
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   outline: 1px solid rgb(240, 240, 240);
+}
+
+.navigation>div>div {
+   background: white;
+   padding: 0.5em;
+   flex: 1;
+}
+
+.menus {
+   display: flex;
+   flex-direction: column;
+   gap: 0.3em;
+   flex: 1;
+}
+
+.menus>a {
+   color: #777;
+   transition: all 0.3s;
+   display: inline-block;
+   padding: 0.8em;
+   border-radius: 0.6em;
+}
+
+.menus>a:hover {
+   background: rgb(245, 245, 245);
+}
+
+#container {
+   padding: 1em 1em 1em 16em;
+   background: rgb(250, 250, 250);
+   height: 100%;
+   width: 100%;
+}
+
+#container>div {
+   outline: 1px solid rgb(230, 230, 230);
+   padding: 1.5em 2em;
+   background: white;
+   border-radius: 0.7em;
+}
+
+.title {
+   display: flex;
+   align-items: center;
+   gap: 0.7em;
+}
+
+.title>div {
+   flex: 1;
+}
+
+.title>div>h1,
+.title>i {
+   font-size: 1.5em;
+   color: #1b9c85;
+}
+
+#listdata,
+#listmahasiswa,
+#listdosen {
+   width: 100% !important;
+   padding: 1.5em 0 !important;
+}
+
+.title>div>p {
+   opacity: 0.6;
+   margin-top: 0.5em;
+}
+
+table>thead>tr>th,
+table>tbody>tr>td {
+   padding: 0.8em !important;
+   border-bottom: 1px solid rgb(230, 230, 230);
+   text-align: center !important;
+}
+
+table>thead>tr>th {
+   background: rgb(245, 245, 245);
+}
+
+.tablebox {
+   padding: 1.5em 0;
+}
+
+.btnarea>button {
+   transition: all 0.3s ease;
+   background: #0079ff;
+   cursor: pointer;
+   color: white;
+   border: none;
+   padding: 0.75em 1.5em;
+   border-radius: 0.5em;
+}
+
+.btnarea>button:hover {
+   background: #015cc5;
+}
+
+.btnarea>button:active {
+   transform: translateY(0.2em);
+}
+
+@keyframes show {
+   from {
+      opacity: 0;
+      transform: translateY(0.3em);
+   }
+
+   to {
+      opacity: 1;
+      transform: translateY(0em);
+   }
+}
+
+.forms {
+   animation: show 0.5s ease;
+   background: white;
+   padding: 1.5em 2em;
+   outline: 1px solid rgb(230, 230, 230);
+   border-radius: 0.5em;
+   margin: 2em 0 1.5em 0;
+   box-shadow: 2px 2px 2px 0 rgb(240, 240, 240);
+}
+
+.forms>h1 {
+   font-size: 1.3em;
+}
+
+.forms>p {
+   margin-top: 0.5em;
+   opacity: 0.6;
+}
+
+.formel>label {
+   display: block;
+   margin-bottom: 0.5em;
+   opacity: 0.6;
+}
+
+.formel {
+   flex: 1;
+}
+
+.nowrap {
+   padding-top: 0.5em !important;
+}
+
+.formel>input,
+.formel>select {
+   width: 100%;
+   border: none;
+   padding: 0.75em;
+   outline: 1px solid rgb(230, 230, 230);
+   background: rgb(250, 250, 250);
+   border-radius: 0.4em;
+}
+
+.formel>input:focus,
+.formel>select:focus,
+input:focus,
+select:focus {
+   outline: 0.15em solid #0079ff !important;
+}
+
+.successmessage {
+   margin: 1em 0;
+   padding: 0.7em;
+   border-radius: 0.3em;
+   display: block;
+   text-align: center;
+   color: #1b9c85;
+   background: #f5fffd;
+}
+
+td>i {
+   display: inline-block;
+   cursor: pointer;
+}
+
+td {
+   white-space: nowrap;
+}
+
+.fa-pen-to-square {
+   color: #1b9c85;
+}
+
+.fa-trash {
+   color: #ff0060;
+   margin-left: 0.5em;
+}
+
+.navigations {
+   display: flex;
+   width: 100%;
+   gap: 0.5em;
+   padding: 0.15em;
+   outline: 1px solid rgb(220, 220, 200);
+   background: rgb(245, 245, 245);
+   border-radius: 0.4em;
+   margin-top: 1.5em;
+   margin-bottom: 1em;
+}
+
+.navigations>a {
+   padding: 0.8em 1.4em;
+   color: #777;
+   flex: 1;
+   text-align: center;
+   border-radius: 0.4em;
+   transition: all 0.3s;
+   cursor: pointer;
+}
+
+.activetab,
+.activetab:hover {
+   background: #1b9c85 !important;
+   color: white !important;
+}
+
+.navigations>a:hover {
+   background: rgb(230, 230, 230);
+}
