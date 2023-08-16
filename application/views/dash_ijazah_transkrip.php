@@ -634,34 +634,34 @@ $nomorIjazah = getRandomNumber();
 				</div>
 				<div className="formijazah">
 					<div className="between">
-						<p class="no_seri">{nomor_seri}</p>
-						<p class="no_ijazah">{nomor_ijazah}</p>
+						<p className="no_seri">{nomor_seri}</p>
+						<p className="no_ijazah">{nomor_ijazah}</p>
 					</div>
 					<div className="wrap-center">
 						<div>
-							<p class="bookman">Memberikan Ijazah Kepada </p>
-							<p class="bookman">Tempat dan Tanggal Lahir </p>
-							<p class="bookman">Nomor Taruna </p>
-							<p class="bookman">Program Pendidikan </p>
-							<p class="bookman">Program Studi </p>
-							<p class="bookman">Status </p>
+							<p className="bookman">Memberikan Ijazah Kepada </p>
+							<p className="bookman">Tempat dan Tanggal Lahir </p>
+							<p className="bookman">Nomor Taruna </p>
+							<p className="bookman">Program Pendidikan </p>
+							<p className="bookman">Program Studi </p>
+							<p className="bookman">Status </p>
 						</div>
 						<div>
-							<p class="bookman"><strong>: {tarunanama.toUpperCase()}</strong></p>
-							<p class="bookman">: {namakota.toUpperCase()}, {tanggal_lahir} </p>
-							<p class="bookman">: {nim} </p>
-							<p class="bookman">: {prodipendidikan.toUpperCase()} </p>
-							<p class="bookman">: {prodiname.toUpperCase()} </p>
-							<p class="bookman">: TERAKREDITASI <strong>"{akreditasi.toUpperCase()}"</strong> </p>
+							<p className="bookman"><strong>: {tarunanama.toUpperCase()}</strong></p>
+							<p className="bookman">: {namakota.toUpperCase()}, {tanggal_lahir} </p>
+							<p className="bookman">: {nim} </p>
+							<p className="bookman">: {prodipendidikan.toUpperCase()} </p>
+							<p className="bookman">: {prodiname.toUpperCase()} </p>
+							<p className="bookman">: TERAKREDITASI <strong>"{akreditasi.toUpperCase()}"</strong> </p>
 							<p><i style={{ paddingLeft: '0.4em' }}>Berdasarkan Keputusan BAN PT No. {noakred}</i></p>
 						</div>
 					</div>
 					<div className="pads">
-						<p class="bookman">Ijazah ini diserahkan berdasarkan Surat Keputusan Direktur Transportasi Sungai Danau dan Penyeberangan Palembang Nomor: SK. 321 Tahun 2022, setelah yang bersangkutan memenuhi semua persyaratan yang telah ditentukan dan kepadanya dilimpahkan segala wewenang dan hak yang berhubungan dengan Ijazah yang dimilikinya serta berhak menggunakan Gelar Akademik <strong>{gelar_akademik}</strong></p>
+						<p className="bookman">Ijazah ini diserahkan berdasarkan Surat Keputusan Direktur Transportasi Sungai Danau dan Penyeberangan Palembang Nomor: SK. 321 Tahun 2022, setelah yang bersangkutan memenuhi semua persyaratan yang telah ditentukan dan kepadanya dilimpahkan segala wewenang dan hak yang berhubungan dengan Ijazah yang dimilikinya serta berhak menggunakan Gelar Akademik <strong>{gelar_akademik}</strong></p>
 					</div>
 					<div className="between pads">
 						<div className="text-center">
-							<p class="jabatan">WAKIL DIREKTUR I </p>
+							<p className="jabatan">WAKIL DIREKTUR I </p>
 							<p>POLITEKNIK TRANSPORTASI SUNGAI DANAU DAN PENYEBERANGAN PALEMBANG</p>
 							<div className="bots">
 								<img src="<?=base_url() ?>assets/barcode.png" alt="barcode" width="80" />
@@ -672,8 +672,8 @@ $nomorIjazah = getRandomNumber();
 							</div>
 						</div>
 						<div className="text-center">
-							<p class="bookman">Palembang, {tanggal_ijazah}</p>
-							<p class="cambria">DIREKTUR</p>
+							<p className="bookman">Palembang, {tanggal_ijazah}</p>
+							<p className="cambria">DIREKTUR</p>
 							<p>POLITEKNIK TRANSPORTASI SUNGAI DANAU DAN PENYEBERANGAN PALEMBANG</p>
 							<div className="bots">
 								<img src="<?=base_url() ?>assets/barcode.png" alt="barcode" width="80" />
@@ -759,24 +759,24 @@ $nomorIjazah = getRandomNumber();
 				<div className="watermark">
 				</div>
 				<div className="ijazahcontent">
-					<p class="cambria margin-55">Lampiran Ijazah Nomor : {nomor_ijazah}</p>
-					<h1 class="judul-transkrip">TRANSKRIP NILAI AKADEMIK</h1>
+					<p className="cambria margin-55">Lampiran Ijazah Nomor : {nomor_ijazah}</p>
+					<h1 className="judul-transkrip">TRANSKRIP NILAI AKADEMIK</h1>
 					<div className="wraptranskrip mini">
 						<div>
-							<p class="cambria">NAMA</p>
-							<p class="cambria">NOMOR TARUNA</p>
-							<p class="cambria">TEMPAT / TANGGAL LAHIR</p>
-							<p class="cambria">JURUSAN / PROGRAM STUDI</p>
-							<p class="cambria">STATUS</p>
-							<p class="cambria">TANGGAL YUDISIUM</p>
+							<p className="cambria">NAMA</p>
+							<p className="cambria">NOMOR TARUNA</p>
+							<p className="cambria">TEMPAT / TANGGAL LAHIR</p>
+							<p className="cambria">JURUSAN / PROGRAM STUDI</p>
+							<p className="cambria">STATUS</p>
+							<p className="cambria">TANGGAL YUDISIUM</p>
 						</div>
 						<div>
-							<p class="cambria">: {tarunanama}</p>
-							<p class="cambria">: {nim}</p>
-							<p class="cambria">: {namakota}, {tanggal_lahir}</p>
-							<p class="cambria">: {prodipendidikan.toUpperCase()} {prodiname.toUpperCase()}</p>
-							<p class="cambria">: TERAKREDITASI {akreditasi.toUpperCase()}</p>
-							<p class="cambria">: {tanggal_yudisium}</p>
+							<p className="cambria">: {tarunanama}</p>
+							<p className="cambria">: {nim}</p>
+							<p className="cambria">: {namakota}, {tanggal_lahir}</p>
+							<p className="cambria">: {prodipendidikan.toUpperCase()} {prodiname.toUpperCase()}</p>
+							<p className="cambria">: TERAKREDITASI {akreditasi.toUpperCase()}</p>
+							<p className="cambria">: {tanggal_yudisium}</p>
 						</div>
 					</div>
 					{/* bagian transkrip */}
@@ -785,23 +785,23 @@ $nomorIjazah = getRandomNumber();
 							<table className="table-bor">
 								<thead>
 									<tr>
-										<th class="cambria">NO</th>
-										<th class="cambria">KODE</th>
-										<th class="Matkul cambria">MATA KULIAH</th>
-										<th class="cambria">SKS</th>
-										<th class="cambria">NILAI</th>
+										<th className="cambria">NO</th>
+										<th className="cambria">KODE</th>
+										<th className="Matkul cambria">MATA KULIAH</th>
+										<th className="cambria">SKS</th>
+										<th className="cambria">NILAI</th>
 									</tr>
 								</thead>
 								<tbody>
 									<tr>
-										<td colSpan="5" class="titlesm cambria">SEMESTER I</td>
+										<td colSpan="5" className="titlesm cambria">SEMESTER I</td>
 									</tr>
 									{ // semester I 
 										listNilai.filter(it => it.semester == "Semester I").length ? listNilai.filter(it => it.semester == 'Semester I').map((it, index) => (
 											<tr key={index}>
 												<td>{it.urutan}</td>
 												<td>{it.kode}</td>
-												<td class="lefts cambria">{it.matakuliah}</td>
+												<td className="lefts cambria">{it.matakuliah}</td>
 												<td>{it.sks}</td>
 												<td>{it.nilai_huruf}</td>
 											</tr>
@@ -812,14 +812,14 @@ $nomorIjazah = getRandomNumber();
 										)
 									}
 									<tr>
-										<td colSpan="5" class="titlesm cambria">SEMESTER II</td>
+										<td colSpan="5" className="titlesm cambria">SEMESTER II</td>
 									</tr>
 									{ // Semester II
 										listNilai.filter(it => it.semester == "Semester II").length ? listNilai.filter(it => it.semester == 'Semester II').map((it, index) => (
 											<tr key={index}>
 												<td>{it.urutan}</td>
 												<td>{it.kode}</td>
-												<td class="lefts cambria">{it.matakuliah}</td>
+												<td className="lefts cambria">{it.matakuliah}</td>
 												<td>{it.sks}</td>
 												<td>{it.nilai_huruf}</td>
 											</tr>
@@ -830,7 +830,7 @@ $nomorIjazah = getRandomNumber();
 										)
 									}
 									<tr>
-										<td colSpan="5" class="titlesm cambria">SEMESTER III</td>
+										<td colSpan="5" className="titlesm cambria">SEMESTER III</td>
 									</tr>
 									{ // semester III
 										listNilai.filter(it => it.semester == "Semester III").length ? listNilai.filter(it => it.semester == 'Semester III').map((it, index) => (
@@ -856,21 +856,21 @@ $nomorIjazah = getRandomNumber();
 									<tr>
 										<th>NO</th>
 										<th>KODE</th>
-										<th class="Matkul cambria">MATA KULIAH</th>
+										<th className="Matkul cambria">MATA KULIAH</th>
 										<th>SKS</th>
 										<th>NILAI</th>
 									</tr>
 								</thead>
 								<tbody>
 									<tr>
-										<td colSpan="5" class="titlesm cambria">SEMESTER VI</td>
+										<td colSpan="5" className="titlesm cambria">SEMESTER VI</td>
 									</tr>
 									{ // semester IV
 										listNilai.filter(it => it.semester == "Semester IV").length ? listNilai.filter(it => it.semester == 'Semester IV').map((it, index) => (
 											<tr key={index}>
 												<td>{it.urutan}</td>
 												<td>{it.kode}</td>
-												<td class="lefts cambria">{it.matakuliah}</td>
+												<td className="lefts cambria">{it.matakuliah}</td>
 												<td>{it.sks}</td>
 												<td>{it.nilai_huruf}</td>
 											</tr>
@@ -881,14 +881,14 @@ $nomorIjazah = getRandomNumber();
 										)
 									}
 									<tr>
-										<td colSpan="5" class="titlesm cambria">SEMESTER V</td>
+										<td colSpan="5" className="titlesm cambria">SEMESTER V</td>
 									</tr>
 									{ // semester V
 										listNilai.filter(it => it.semester == "Semester V").length ? listNilai.filter(it => it.semester == 'Semester V').map((it, index) => (
 											<tr key={index}>
 												<td>{it.urutan}</td>
 												<td>{it.kode}</td>
-												<td class="lefts cambria">{it.matakuliah}</td>
+												<td className="lefts cambria">{it.matakuliah}</td>
 												<td>{it.sks}</td>
 												<td>{it.nilai_huruf}</td>
 											</tr>
@@ -899,14 +899,14 @@ $nomorIjazah = getRandomNumber();
 										)
 									}
 									<tr>
-										<td colSpan="5" class="titlesm cambria">SEMESTER VI</td>
+										<td colSpan="5" className="titlesm cambria">SEMESTER VI</td>
 									</tr>
 									{ // semester VI
 										listNilai.filter(it => it.semester == "Semester VI").length ? listNilai.filter(it => it.semester == 'Semester VI').map((it, index) => (
 											<tr key={index}>
 												<td>{it.urutan}</td>
 												<td>{it.kode}</td>
-												<td class="lefts cambria">{it.matakuliah}</td>
+												<td className="lefts cambria">{it.matakuliah}</td>
 												<td>{it.sks}</td>
 												<td>{it.nilai_huruf}</td>
 											</tr>
@@ -917,14 +917,14 @@ $nomorIjazah = getRandomNumber();
 										)
 									}
 									<tr>
-										<td colSpan="5" class="titlesm cambria">UJIAN AKHIR PROGRAM STUDI</td>
+										<td colSpan="5" className="titlesm cambria">UJIAN AKHIR PROGRAM STUDI</td>
 									</tr>
 									{ // semester VI
 										listNilai.filter(it => it.semester == "Ujian Akhir Program Studi").length ? listNilai.filter(it => it.semester == 'Ujian Akhir Program Studi').map((it, index) => (
 											<tr key={index}>
 												<td>{it.urutan}</td>
 												<td>{it.kode}</td>
-												<td class="lefts cambria" colSpan="2">{it.matakuliah}</td>
+												<td className="lefts cambria" colSpan="2">{it.matakuliah}</td>
 												<td>{it.nilai_huruf}</td>
 											</tr>
 										)) : (
@@ -934,24 +934,24 @@ $nomorIjazah = getRandomNumber();
 										)
 									}
 									<tr>
-										<td colSpan="5" class="titlesm cambria">JUDUL KERTAS KERJA WAJIB</td>
+										<td colSpan="5" className="titlesm cambria">JUDUL KERTAS KERJA WAJIB</td>
 									</tr>
 									<tr>
-										<td colSpan="5" class="expad cambria judul_kkw">{judul_kkw}</td>
+										<td colSpan="5" className="expad cambria judul_kkw">{judul_kkw}</td>
 									</tr>
 									<tr>
 										<td colSpan="5" className="btop">
 											<div>
-												<p class="cambria">JUMLAH SKS</p>
-												<p class="bolds cambria">: {listNilai.reduce((a,b) => a + b.sks, 0)} SKS</p>
+												<p className="cambria">JUMLAH SKS</p>
+												<p className="bolds cambria">: {listNilai.reduce((a,b) => a + b.sks, 0)} SKS</p>
 											</div>
 											<div>
-												<p class="cambria">IP KUMULATIF</p>
-												<p class="bolds cambria">: {ipk.toFixed(2)}</p>
+												<p className="cambria">IP KUMULATIF</p>
+												<p className="bolds cambria">: {ipk.toFixed(2)}</p>
 											</div>
 											<div>
-												<p class="cambria">PREDIKAT KELULUSAN </p>
-												<p class="cambria">: {generatePredikat(ipk)}</p>
+												<p className="cambria">PREDIKAT KELULUSAN </p>
+												<p className="cambria">: {generatePredikat(ipk)}</p>
 											</div>
 										</td>
 									</tr>
@@ -962,27 +962,27 @@ $nomorIjazah = getRandomNumber();
 					<p className="keterang">KETERANGAN: A=4; AB=3.50; B=3; BC=2.50; C=2; D=1; E=0 </p>
 					<div className="between pads ijpad">
 						<div className="text-center">
-							<p class="calibri">WAKIL DIREKTUR I </p>
-							<p class="calibri">POLITEKNIK TRANSPORTASI SUNGAI DANAU DAN PENYEBERANGAN PALEMBANG</p>
+							<p className="calibri">WAKIL DIREKTUR I </p>
+							<p className="calibri">POLITEKNIK TRANSPORTASI SUNGAI DANAU DAN PENYEBERANGAN PALEMBANG</p>
 							<div className="bots">
 								<img src="<?=base_url() ?>assets/barcode.png" alt="barcode" width="80" />
 							</div>
 							<div>
-								<p class="calibri">{wadir.toUpperCase()}</p>
-								<p class="calibri">NIP. {wadirnip}</p>
+								<p className="calibri">{wadir.toUpperCase()}</p>
+								<p className="calibri">NIP. {wadirnip}</p>
 							</div>
 						</div>
 						<div className="text-center">
-							<p class="cambria">Palembang, {tanggal_ijazah}</p>
-							<p class="calibri">DIREKTUR</p>
-							<p class="calibri">POLITEKNIK TRANSPORTASI SUNGAI DANAU DAN PENYEBERANGAN PALEMBANG</p>
+							<p className="cambria">Palembang, {tanggal_ijazah}</p>
+							<p className="calibri">DIREKTUR</p>
+							<p className="calibri">POLITEKNIK TRANSPORTASI SUNGAI DANAU DAN PENYEBERANGAN PALEMBANG</p>
 							<div className="bots fotobox">
 								<img src="<?=base_url() ?>assets/barcode.png" alt="barcode" width="80" />
-								<img className="prof" src={`<?=base_url()?>upload/${foto}`} alt="fotoprofil" />
+								<img className="prof" src={`<?=base_url()?>upload/${foto != "" ? foto : 'Pasfoto3x4.jpg'}`} alt="fotoprofil" />
 							</div>
 							<div>
-								<p class="calibri">{dir.toUpperCase()}</p>
-								<p class="calibri">NIP. {dirnip}</p>
+								<p className="calibri">{dir.toUpperCase()}</p>
+								<p className="calibri">NIP. {dirnip}</p>
 							</div>
 						</div>
 					</div>
