@@ -57,9 +57,12 @@
   }
 
   .error-message {
-    color: #ff0000;
     margin-top: 1.5em;
-    text-align: center;
+    color: #FF0060;
+		padding: 0.75em;
+		text-align: center;
+		border-radius: 0.3em;
+		background: #ffe7f0
   }
 
   .outerbox {
@@ -103,6 +106,7 @@
 
   .titles>p {
     opacity: 0.6;
+    margin-top: 0.8em;
   }
 
   .rightside {
@@ -151,19 +155,23 @@
       e.preventDefault();
       let formData = new FormData(document.getElementById('formlogin'));
       formData = Object.fromEntries(formData.entries());
-      if (formData.username !== 'admin' || formData.password !== 'admin') {
-        setErrorMessage(true);
-        setCorrectCredentials({
-          username: formData.username === 'admin' ? '' : formData.username,
-          password: formData.password === 'admin' ? '' : formData.password,
-        });
-        setTimeout(() => {
-          setErrorMessage(false);
-          setCorrectCredentials({ username: '', password: '' });
-        }, 5000);
-      } else {
-        window.location.href = "index.php/Dashboard";
-      }
+      // validate data user
+      $.ajax({
+        url: `<?=base_url()?>index.php/Users/validasi_user`,
+        data: formData,
+        method: 'POST',
+        success: data => {
+          let datalength = JSON.parse(data).length
+          if(datalength > 0){
+            window.location.href = "index.php/Dashboard";
+          } else {
+            setErrorMessage(true)
+            setTimeout(() => {
+              setErrorMessage(false);
+            }, 5000);
+          }
+        },
+      })
     };
 
     return (
@@ -208,14 +216,7 @@
               {
                 errorMessage ? (
                   <div className="error-message">
-                    <i className="fas fa-times-circle"></i> Username or password is incorrect!
-                  </div>
-                ) : null
-              }
-              {
-                errorMessage && correctCredentials.username && correctCredentials.password ? (
-                  <div className="error-message">
-                    <i className="fas fa-info-circle"></i> Are you sure you are an admin? <br/>*authorized personnel only
+                    <i className="fas fa-times-circle"></i> Sorry, Username or password is incorrect!
                   </div>
                 ) : null
               }

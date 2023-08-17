@@ -2,7 +2,7 @@
    .btnlogout {
       cursor: pointer;
       transition: all 0.3s;
-      padding: 0.7em;
+      padding: 0.9em;
       border: none;
       font-size: 0.9em;
    }

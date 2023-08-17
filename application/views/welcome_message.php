@@ -115,9 +115,9 @@
 		return (
 			<div id="container">
 				<div>
-					<h1>Selamat Datang, <strong>Administrator</strong></h1>
+					<h1>Selamat Datang, <strong><?= $userlogged ?></strong></h1>
 					<p>Silahkan pilih <strong>Menu di bawah</strong> atau <strong>Sidebar</strong> sesuai kebutuhan.</p>
-					<div class="boximage">
+					<div className="boximage">
 						{/*<img src="../assets/dashboard.png" alt="illustration" />*/}
 						<div className="menuall">
 							{

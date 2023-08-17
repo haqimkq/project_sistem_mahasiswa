@@ -71,9 +71,22 @@ class Users extends CI_Controller {
       $data['email'] = $this->input->post('email');
       $data['nama'] = $this->input->post('nama');
       $data['role'] = $this->input->post('role');
-      $data['password'] = md5($this->input->post('password'));
+      $password = md5($this->input->post('password'));
+      $data['password'] = $password;
       $processadd = $this->User_model->create($data);
       echo json_encode($processadd);
+    }
+
+    public function validasi_user(){
+      $this->load->library('session');
+      $email = $this->input->post('username');
+      $password = $this->input->post('password');
+      $enc_pw = md5($password);
+      $user_exist = $this->User_model->check_user($email, $enc_pw);
+      if(count($user_exist) > 0){
+         $this->session->set_userdata('username', $user_exist[0]['nama']);
+      }
+      echo json_encode($user_exist);
     }
 
     public function index() {

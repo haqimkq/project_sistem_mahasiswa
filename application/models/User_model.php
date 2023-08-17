@@ -18,7 +18,9 @@ class User_model extends CI_Model {
     public function get_all_user(){
         return $this->db->get('user_access')->result_array();
     }
-
+    public function check_user($email, $password){
+        return $this->db->query(" SELECT * FROM user_access WHERE email = '$email' AND password = '$password' ")->result_array();
+    }
     public function read_kota($id = null) {
         if ($id) {
             return $this->db->get_where('Kota', ['ID' => $id])->row_array();

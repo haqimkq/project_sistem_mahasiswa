@@ -21,8 +21,9 @@ class Welcome extends CI_Controller {
 	public function index()
 	{
 		$data['url'] = '../assets/icon.png';
+		$data['userlogged'] = 'Administrator';
 		$this->load->view('resource2', $data);
-		$this->load->view('nav');
-		$this->load->view('welcome_message');
+		$this->load->view('nav', $data);
+		$this->load->view('welcome_message', $data);
 	}
 }
