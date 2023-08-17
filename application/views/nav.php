@@ -54,11 +54,18 @@
          line-height: 1.4 !important;
          margin-top: 1.5em !important;
       }
+      .menus>a>i{
+         font-size: 1.2em;
+      }
+      .menus>a{
+         font-size: 1.4em;
+      }
    }
 </style>
 <div id="apps"></div>
 <script type="text/babel">
    const App = () => {
+      const [showMenu, setShowMenu] = useState(false)
       const handleLogOut = () => {
          let confirm = window.confirm('Anda yakin ingin Log Out?')
          if(confirm){
@@ -72,10 +79,22 @@
       }, [])
       return (
          <nav className="navigation">
-            <div>
+            {/* mobile nav */}
+            <div className="mobile">
+               <img src="<?=base_url()?>assets/icon.png" alt="logo kampus" width="40" height="40"/>
+               <i 
+                  className="fas fa-bars"
+                  onClick={e => setShowMenu(!showMenu)}
+               ></i>
+               {
+                  !showMenu ? (<ListMenuMobile />) : false
+               }
+            </div>
+            {/* desktop nav */}
+            <div className="desktop">
                <div>
                   <a href="<?= base_url() ?>index.php/Dashboard" className="headmenu">
-                     <img src="<?=base_url()?>assets/icon.png" alt="logo kampus" width="40" height="40"/>
+                     <img src="<?=base_url()?>assets/icon.png" alt="logo kampus" width="60" height="60"/>
                      <div>
                         <h3>SI Cetak Ijazah</h3>
                         <p>Poltektrans SDP Palembang</p>
@@ -103,4 +122,20 @@
    const root = document.querySelector("#apps")
    const el = ReactDOM.createRoot(root)
    el.render(<App />)
+   // list menu mobile
+   const ListMenuMobile = props => {
+      return (
+         <div className="listmenumobile">
+            <div className="menus">
+               <a href="<?= base_url() ?>index.php/DosenMahasiswa"><i className="fas fa-users"></i> Dosen & Taruna </a>
+               <a href="<?= base_url() ?>index.php/IjazahTranskrip"><i className="fas fa-file-signature"></i> Ijazah & Transkrip</a>
+               <a href="<?= base_url() ?>index.php/Penilaian"><i className="fas fa-award"></i> Penilaian</a>
+               <a href="<?= base_url() ?>index.php/MataKuliah"><i className="fas fa-book"></i> Mata Kuliah</a>
+               <a href="<?= base_url() ?>index.php/ProgramStudi"><i className="fas fa-graduation-cap"></i> Program Studi</a>
+               <a href="<?= base_url() ?>index.php/Kota"><i className="fas fa-building"></i> Kota</a>
+               <a href="<?= base_url() ?>index.php/Users"><i className="fas fa-user"></i> User</a>
+            </div>
+         </div>
+      )
+   }
 </script>

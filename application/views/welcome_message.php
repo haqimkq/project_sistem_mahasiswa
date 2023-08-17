@@ -16,7 +16,7 @@
 	}
 	#container>div>p{
 		margin-top: 0.5em;
-		opacity: 0.6;
+		color: rgb(100,100,100);
 	}
 	.boximage{
 		display: flex;
@@ -60,7 +60,7 @@
 		object-fit: cover;
 	}
 	.boxcards>div>p{
-		opacity: 0.6;
+		color: rgb(100,100,100);
 		margin-top: 0.4em;
 	}
 </style>
