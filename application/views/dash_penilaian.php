@@ -54,6 +54,8 @@
 		background: #f5fffd;
 	}
 </style>
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 <div id="appss"></div>
 <script type="text/babel">
 	const { useState, useEffect } = React
@@ -252,6 +254,11 @@
 				}
 			}
 		}, [type, editedData])
+		// render select2 element
+		useEffect(() => {
+			$('select[name="taruna"]').select2()
+			$('select[name="matakuliah"]').select2()
+		})
 		return (
 			<div className="forms">
 				<h1>{type == 'add' ? 'Tambah' : 'Update'} Penilaian</h1>
