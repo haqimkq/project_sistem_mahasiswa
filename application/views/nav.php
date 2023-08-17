@@ -42,7 +42,6 @@
          }
       }
       useEffect(() => {
-         console.log('<?= $userlogged ?>')
          if('<?= $userlogged ?>' == null || '<?= $userlogged ?>' == ''){
             window.location.href="<?=base_url()?>"
          }
