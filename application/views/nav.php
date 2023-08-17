@@ -88,6 +88,7 @@
                      <a href="<?= base_url() ?>index.php/MataKuliah"><i className="fas fa-book"></i> Mata Kuliah</a>
                      <a href="<?= base_url() ?>index.php/ProgramStudi"><i className="fas fa-graduation-cap"></i> Program Studi</a>
                      <a href="<?= base_url() ?>index.php/Kota"><i className="fas fa-building"></i> Kota</a>
+                     <a href="<?= base_url() ?>index.php/Users"><i className="fas fa-user"></i> User</a>
                   </div>
                </div>
                <button 
