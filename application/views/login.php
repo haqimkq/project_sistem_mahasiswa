@@ -150,7 +150,6 @@
   const App = () => {
     const [errorMessage, setErrorMessage] = useState(false);
     const [correctCredentials, setCorrectCredentials] = useState({ username: '', password: '' });
-
     const handleLogin = e => {
       e.preventDefault();
       let formData = new FormData(document.getElementById('formlogin'));
@@ -173,7 +172,6 @@
         },
       })
     };
-
     return (
       <div className="outerbox">
         <div className="leftside">

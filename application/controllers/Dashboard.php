@@ -20,15 +20,26 @@ class Dashboard extends CI_Controller {
 	 */
 	public function index()
 	{
-
 		$data['url'] = '../assets/icon.png';
 		$this->load->library('session');
-		$data['userlogged'] = $this->session->username;
-		$this->load->view('resource2', $data);
-		$this->load->view('nav');
-		$this->load->view('welcome_message', $data);
+		// check session
+		$user_session = $this->session->username;
+		if( $user_session != null || $user_session != ''){
+			$data['userlogged'] = $user_session;
+			$this->load->view('resource2', $data);
+			$this->load->view('nav', $data);
+			$this->load->view('welcome_message', $data);
+		} else {
+			// navigate to login
+			redirect(base_url());
+		}
 	}
 	public function login(){
+		// clear session
+		$this->load->library('session');
+		$this->session->set_userdata('username', null);
+		$data['userlogged'] = $this->session->username;
+		// load page login
 		$data['url'] = './assets/icon.png';
 		$this->load->view('resource', $data);
 		$this->load->view('login');

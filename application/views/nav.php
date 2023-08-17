@@ -41,6 +41,12 @@
             window.location.href="<?=base_url()?>"
          }
       }
+      useEffect(() => {
+         console.log('<?= $userlogged ?>')
+         if('<?= $userlogged ?>' == null || '<?= $userlogged ?>' == ''){
+            window.location.href="<?=base_url()?>"
+         }
+      }, [])
       return (
          <nav className="navigation">
             <div>

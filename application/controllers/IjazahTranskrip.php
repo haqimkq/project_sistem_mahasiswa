@@ -24,12 +24,21 @@ class IjazahTranskrip extends CI_Controller {
 	 */
 	public function index()
 	{
-		$data['url'] = '../assets/icon.png';
-		$this->load->view('resource2', $data);
-		$this->load->view('nav');
-		$this->load->view('dash_ijazah_transkrip');
-		$this->load->view('dash_crud_ijazah');
-		$this->load->view('dash_crud_transkrip');
+		$this->load->library('session');
+		$user_session = $this->session->username;
+		// check session
+		if( $user_session != null || $user_session != ''){
+			$data['userlogged'] = $user_session;
+			$data['url'] = '../assets/icon.png';
+			$this->load->view('resource2', $data);
+			$this->load->view('nav', $data);
+			$this->load->view('dash_ijazah_transkrip');
+			$this->load->view('dash_crud_ijazah');
+			$this->load->view('dash_crud_transkrip');
+		} else {
+			// navigate to login
+			redirect(base_url());
+		}
 	}
 	public function get_all_ijazah(){
 		$data = $this->IjazahTranskrip_model->get_all_ijazah();

@@ -25,9 +25,18 @@ class DosenMahasiswa extends CI_Controller {
 	public function index()
 	{
 		$data['url'] = '../assets/icon.png';
-		$this->load->view('resource2', $data);
-		$this->load->view('nav');
-		$this->load->view('dash_dosen_mahasiswa');
+		$this->load->library('session');
+		$user_session = $this->session->username;
+		// check session
+		if( $user_session != null || $user_session != ''){
+			$data['userlogged'] = $user_session;
+			$this->load->view('resource2', $data);
+			$this->load->view('nav', $data);
+			$this->load->view('dash_dosen_mahasiswa');
+		} else {
+			// navigate to login
+			redirect(base_url());
+		}
 	}
 
 	// Dosen
