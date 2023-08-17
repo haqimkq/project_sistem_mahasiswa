@@ -48,7 +48,7 @@
 		transform: translateY(-0.1em);
 	}
 	.boxcards>div{
-		padding: 1em;
+		padding: 0 1em 1em 1em;
 	}
 	.boxcards>div>h3{
 		font-size: 1.3em;
@@ -104,6 +104,12 @@
 				desc: "Manage data Kota",
 				img: "kota.svg",
 				url: "index.php/Kota"
+			},
+			{
+				title: "User",
+				desc: "Manage data User",
+				img: "team.png",
+				url: "index.php/Users"
 			},
 		]
 		return (
