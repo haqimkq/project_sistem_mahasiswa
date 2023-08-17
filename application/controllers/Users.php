@@ -68,8 +68,10 @@ class Users extends CI_Controller {
 
 	public function create_user() {
     // Tampilkan halaman form tambah data user
-      $data['kode_user'] = $this->input->post('kode_user');
+      $data['email'] = $this->input->post('email');
       $data['nama'] = $this->input->post('nama');
+      $data['role'] = $this->input->post('role');
+      $data['password'] = $this->input->post('password');
       $processadd = $this->User_model->create($data);
       echo json_encode($processadd);
     }
