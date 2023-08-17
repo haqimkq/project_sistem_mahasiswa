@@ -8,26 +8,17 @@ class User_model extends CI_Model {
 
     public function create($data) {
         $data = array(
-            'kode_kota' => $data["kode_kota"],
+            'email' => $data["email"],
             'nama' => $data["nama"],
+            'role' => $data["role"],
+            'password' => $data["password"]
         );
-        return $this->db->insert('kota', $data);
+        return $this->db->insert('user_access', $data);
     }
     public function get_all_user(){
         return $this->db->get('user_access')->result_array();
     }
 
-    public function update($id, $data) {
-        $this->db->where('id', $id);
-        $this->db->update('kota', $data);
-        return $this->db->affected_rows();
-    }
-
-    public function delete($id) {
-        $this->db->where('id', $id);
-        $this->db->delete('kota');
-        return $this->db->affected_rows();
-    }
     public function read_kota($id = null) {
         if ($id) {
             return $this->db->get_where('Kota', ['ID' => $id])->row_array();
@@ -36,15 +27,15 @@ class User_model extends CI_Model {
         }
     }
 
-    public function update_kota($id, $data) {
+    public function update_user($id, $data) {
         $this->db->where('id', $id);
-        $this->db->update('kota', $data);
+        $this->db->update('user_access', $data);
         return $this->db->affected_rows();
     }
 
-    public function delete_kota($id) {
+    public function delete_user($id) {
         $this->db->where('id', $id);
-        $this->db->delete('kota');
+        $this->db->delete('user_access');
         return $this->db->affected_rows();
     }
 }

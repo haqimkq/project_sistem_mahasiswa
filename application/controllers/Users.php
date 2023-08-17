@@ -71,7 +71,7 @@ class Users extends CI_Controller {
       $data['email'] = $this->input->post('email');
       $data['nama'] = $this->input->post('nama');
       $data['role'] = $this->input->post('role');
-      $data['password'] = $this->input->post('password');
+      $data['password'] = md5($this->input->post('password'));
       $processadd = $this->User_model->create($data);
       echo json_encode($processadd);
     }
@@ -93,16 +93,22 @@ class Users extends CI_Controller {
 
     public function update_user() {
         // Proses update data user ke database berdasarkan ID
-        $id = $this->input->post('id');
-        $data['kode_user'] = $this->input->post('kode_user');
-        $data['nama'] = $this->input->post('nama');
-        $processedit = $this->User_model->update($id, $data);
-        echo json_encode($processedit);
-    }
+         $id = $this->input->post('id');
+         $password = $this->input->post('password');
+         $data['email'] = $this->input->post('email');
+         $data['nama'] = $this->input->post('nama');
+         $data['role'] = $this->input->post('role');
+         // jika tidak ada update password
+         if($password != ''){
+            $data['password'] = md5($this->input->post('password'));
+         }
+         $processedit = $this->User_model->update_user($id, $data);
+         echo json_encode($processedit);
+      }
 
     public function delete_user($id) {
         // Proses hapus data user dari database berdasarkan ID
-        $processdata = $this->User_model->delete($id);
+        $processdata = $this->User_model->delete_user($id);
         return $processdata;
     }
 

@@ -94,14 +94,16 @@
 		}
 		// Fungsi untuk menangani klik tombol edit
 		const handleEditData = (id, listData) => {
-			setEditedData(listData.filter(it => it.id == id)[0])
+			let filtered = listData.filter(it => it.id == id)[0]
+			filtered.password = null
+			setEditedData(filtered)
 			setShowForm('edit')
 		}
 		// Fungsi untuk menangani klik tombol delete
 		const handleDeleteData = id => {
-			if (confirm('Apakah Anda yakin ingin menghapus data Kota?')) {
+			if (confirm('Apakah Anda yakin ingin menghapus data User?')) {
 				$.ajax({
-					url: `<?= base_url() ?>index.php/Kota/delete_kota/${id}`,
+					url: `<?= base_url() ?>index.php/Users/delete_user/${id}`,
 					method: 'POST',
 					success: function (data) {
 						setShowMessageSuccess(true)
@@ -291,7 +293,7 @@
 					<div className="wrap" style={{ paddingTop: '0.5em' }}>
 						<div className="formel">
 							<label htmlFor="password">Password </label>
-							<input name="password" type="password" placeholder="Type password ..." required />
+							<input name="password" type="password" placeholder="Type password ..." required={type == 'add'} />
 						</div>
 						<div className="formel">
 							<label htmlFor="confirm_password">Confirm Password</label>
@@ -300,7 +302,7 @@
 								type="password"
 								placeholder="Re-type password ..."
 								onKeyUp={e => checkValidity('password', e.target.value)}
-								required
+								required={type == 'add'}
 							/>
 						</div>
 					</div>
