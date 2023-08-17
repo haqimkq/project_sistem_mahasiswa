@@ -143,7 +143,30 @@
     opacity: 0.5;
     margin-bottom: 1.8em;
   }
+  @media screen and (max-width: 768px){
+    .outerbox{
+      flex-direction: column;
+    }
+    .leftside{
+      justify-content: flex-start;
+      padding: 1em 2em;
+      max-height: 23em;
+    }
+    .leftside>img{
+      width: 100%;
+    }
+    .rightside{
+      padding: 1em 1.5em;
+      width: 100%;
+    }
+    .container{
+      width: 100%;
+      padding: 1em 2em;
+      margin: 0;
+    }
+  }
 </style>
+
 <div id="apps"></div>
 <script type="text/babel">
   const { useState } = React;

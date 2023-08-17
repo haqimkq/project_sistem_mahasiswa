@@ -213,6 +213,10 @@
             }
          }
       }, [type, editedData])
+      // inisialisasi select2
+      useEffect(() => {
+         $('select[name="taruna"]').select2()
+      }, [])
       return (
          <div className="forms">
             <h1>{type == 'add' ? 'Tambah' : 'Update'} Data Ijazah</h1>

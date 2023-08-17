@@ -309,3 +309,21 @@ td {
 .navigations>a:hover {
    background: rgb(230, 230, 230);
 }
+
+@media screen and (max-width: 768px) {
+   * {
+      font-size: 13px;
+   }
+
+   .navigation {
+      display: none;
+   }
+
+   #appss {
+      width: 100%;
+   }
+
+   #container {
+      padding: 0;
+   }
+}

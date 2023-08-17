@@ -31,6 +31,30 @@
    a>i{
       width: 1.3em;
    }
+   @media screen and (max-width: 768px){
+      .menuall{
+         padding: 0 !important;
+      }
+      .menuall>a{
+         width: 100% !important;
+         padding: 0 !important;
+         margin-bottom: 1.5em;
+      }
+      .boxcards>div>p{
+         line-height: 1.4 !important;
+      }
+      .boxcards>img{
+         width: 6em !important;
+      }
+      #container>div>h1>strong{
+         display: block;
+         margin-top: 0.4em;
+      }
+      #container>div>p{
+         line-height: 1.4 !important;
+         margin-top: 1.5em !important;
+      }
+   }
 </style>
 <div id="apps"></div>
 <script type="text/babel">
