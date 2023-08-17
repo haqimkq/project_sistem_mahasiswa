@@ -354,6 +354,9 @@
 		#appss, #container>div{
 			overflow: hidden;
 		}
+		*{
+			line-height: 1.2 !important;
+		}
 		.no-print {
 			display: none;
 		}
