@@ -351,6 +351,9 @@
 		transform: translate(-8em, -1.2em);
 	}
 	@media print {
+		#appss, #container>div{
+			overflow: hidden;
+		}
 		.no-print {
 			display: none;
 		}
@@ -392,29 +395,32 @@
 	}
 </style>
 
-<?php
-// Fungsi untuk mendapatkan nomor acak antara 100 hingga 1000
-function getRandomNumber() {
-    return rand(100, 1000);
-}
-
-// Mendapatkan nomor seri dan nomor ijazah secara acak
-$nomorSeri = getRandomNumber();
-$nomorIjazah = getRandomNumber();
-?>
-
 <div id="appss"></div>
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 <script type="text/babel">
 	const { useState, useEffect } = React
 	const App = () => {
 		const [mahasiswaInfo, setMahasiswaInfo] = useState(null)
 		const [mahasiswaNotFound, setMahasiswaNotFound] = useState(false)
 		const [listNilai, setListNilai] = useState([])
+		const [listTaruna, setListTaruna] = useState([])
 		const [onStart, setOnStart] = useState(true)
 		const [isPrintIjazah, setIsPrintIjazah] = useState(false)
 		const [isPrintTranskrip, setIsPrintTranskrip] = useState(false)
 		const [dataPejabat, setDataPejabat] = useState([])
 		const [activeTab, setActiveTab] = useState(1)
+		// get data taruna 
+		const getDataTaruna = () => {
+			$.ajax({
+				url: '<?=base_url()?>index.php/DosenMahasiswa/get_all_mahasiswa',
+				method: 'GET',
+				success: data => {
+					let listData = JSON.parse(data).map(it => ({nama: it.nama, nim: it.nomor_taruna}))
+					setListTaruna(listData)
+				}
+			})
+		}
 		// get data direktur dan wadir
 		const getDataPejabat = () => {
 			$.ajax({
@@ -486,11 +492,14 @@ $nomorIjazah = getRandomNumber();
 						{ data: 'nilai_huruf', title: 'Nilai Huruf' },
 					]
 				})
+				// inisialisasi select2
+				$('select[name="nim"]').select2()
 			}
 		}, [listNilai, activeTab])
 		// get data pejabat
 		useEffect(() => {
 			getDataPejabat()
+			getDataTaruna()
 		}, [])
 		return (
 			<div id="container">
@@ -539,7 +548,17 @@ $nomorIjazah = getRandomNumber();
 										<div className="wrap" style={{padding: '1em 0'}}>
 											<div className="formel">
 												<label htmlFor="nim">NIM</label>
-												<input type="text" name="nim" placeholder="e.g. 220401020003" />
+												<select name="nim" >
+													<option value="">--- Pilih Taruna ---</option>
+													{
+														listTaruna.map((it, index) => (
+															<option 
+																key={index} 
+																value={it.nim}>{it.nim} - {it.nama}
+															</option>
+														))
+													}
+												</select>
 											</div>
 											<div className="formel">
 												<label htmlFor="nim"></label>
