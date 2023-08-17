@@ -149,6 +149,19 @@ table>thead>tr>th {
    background: rgb(245, 245, 245);
 }
 
+table>tbody>tr {
+   cursor: pointer;
+   transition: all 0.3s ease;
+}
+
+table>tbody>tr:nth-child(even) {
+   background: rgb(252, 252, 252) !important;
+}
+
+table>tbody>tr:hover {
+   background: rgb(245, 245, 245) !important;
+}
+
 .tablebox {
    padding: 1.5em 0;
 }
