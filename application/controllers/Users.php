@@ -94,11 +94,13 @@ class Users extends CI_Controller {
         $data['url'] = '../assets/icon.png';
         $this->load->library('session');
         $user_session = $this->session->username;
+        $user_role = $this->session->role;
         // check session
         if( $user_session != null || $user_session != ''){
             // validasi role user
-			if($user_role == 'Administrator' ){
+			if($user_role == 'Administrator'){
                 $data['userlogged'] = $user_session;
+                $data['role'] = $user_role;
                 $this->load->view('resource2', $data);
                 $this->load->view('nav', $data);
                 $this->load->view('dash_users');
