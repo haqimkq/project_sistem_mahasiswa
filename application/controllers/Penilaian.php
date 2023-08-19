@@ -29,12 +29,17 @@ class Penilaian extends CI_Controller {
 		$user_role = $this->session->role;
 		// check session
 		if( $user_session != null || $user_session != ''){
-			$data['userlogged'] = $user_session;
-			$data['role'] = $user_role;
-			$data['url'] = '../assets/icon.png';
-			$this->load->view('resource2', $data);
-			$this->load->view('nav', $data);
-			$this->load->view('dash_penilaian');
+			// validasi role user
+			if($user_role == 'Administrator' || $user_role == 'Unit Prodi'){
+				$data['userlogged'] = $user_session;
+				$data['role'] = $user_role;
+				$data['url'] = '../assets/icon.png';
+				$this->load->view('resource2', $data);
+				$this->load->view('nav', $data);
+				$this->load->view('dash_penilaian');
+			} else {
+				redirect("/not-found");
+			}
 		} else {
 			// navigate to login
 			redirect(base_url());

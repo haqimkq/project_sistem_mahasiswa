@@ -35,6 +35,6 @@
 	<div class="inner">
 		<h1>Restricted Access</h1>
 		<p>Opss, sorry you don't have access to this page. Please <a href="#" onclick="history.back()">go back</a>.</p>
-		<img src="assets/404.png" alt="illustration" width="300">
+		<img src="<?php echo config_item('base_url()')?>/ijazah/assets/404.png" alt="illustration" width="300">
 	</div>
 </div>

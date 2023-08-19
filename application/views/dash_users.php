@@ -287,6 +287,8 @@
 							<select name="role" required>
 								<option value="">--- Pilih Role --- </option>
 								<option value="Administrator">Administrator</option>
+								<option value="Unit Prodi">Unit Prodi</option>
+								<option value="Akademik">Akademik</option>
 							</select>
 						</div>
 					</div>

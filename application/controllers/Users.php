@@ -96,10 +96,15 @@ class Users extends CI_Controller {
         $user_session = $this->session->username;
         // check session
         if( $user_session != null || $user_session != ''){
-            $data['userlogged'] = $user_session;
-            $this->load->view('resource2', $data);
-            $this->load->view('nav', $data);
-            $this->load->view('dash_users');
+            // validasi role user
+			if($user_role == 'Administrator' ){
+                $data['userlogged'] = $user_session;
+                $this->load->view('resource2', $data);
+                $this->load->view('nav', $data);
+                $this->load->view('dash_users');
+            } else {
+                redirect("/not-found");
+            }
         } else {
             // navigate to login
             redirect(base_url());

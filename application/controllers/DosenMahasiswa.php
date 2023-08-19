@@ -30,11 +30,16 @@ class DosenMahasiswa extends CI_Controller {
 		$user_role = $this->session->role;
 		// check session
 		if( $user_session != null || $user_session != ''){
-			$data['userlogged'] = $user_session;
-			$data['role'] = $user_role;
-			$this->load->view('resource2', $data);
-			$this->load->view('nav', $data);
-			$this->load->view('dash_dosen_mahasiswa');
+			// validasi role user
+			if($user_role == 'Administrator' || $user_role == 'Unit Prodi' || $user_role == 'Akademik'){
+				$data['userlogged'] = $user_session;
+				$data['role'] = $user_role;
+				$this->load->view('resource2', $data);
+				$this->load->view('nav', $data);
+				$this->load->view('dash_dosen_mahasiswa');
+			} else {
+				redirect("/not-found");
+			}
 		} else {
 			// navigate to login
 			redirect(base_url());

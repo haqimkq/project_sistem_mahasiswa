@@ -29,11 +29,16 @@ class ProgramStudi extends CI_Controller {
 			$user_role = $this->session->role;
 			// check session
 			if( $user_session != null || $user_session != ''){
-				$data['userlogged'] = $user_session;
-				$data['role'] = $user_role;
-				$this->load->view('resource');
-				$this->load->view('nav', $data);
-				$this->load->view('dash_program_studi');
+				// validasi role
+				if($user_role == 'Administrator' || $user_role == 'Akademik'){
+					$data['userlogged'] = $user_session;
+					$data['role'] = $user_role;
+					$this->load->view('resource');
+					$this->load->view('nav', $data);
+					$this->load->view('dash_program_studi');
+				} else {
+					redirect("/not-found");
+				}
 			} else {
 				// navigate to login
 				redirect(base_url());
