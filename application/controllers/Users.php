@@ -85,6 +85,7 @@ class Users extends CI_Controller {
       $user_exist = $this->User_model->check_user($email, $enc_pw);
       if(count($user_exist) > 0){
          $this->session->set_userdata('username', $user_exist[0]['nama']);
+         $this->session->set_userdata('role', $user_exist[0]['role']);
       }
       echo json_encode($user_exist);
     }

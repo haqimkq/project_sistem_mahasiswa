@@ -25,17 +25,19 @@ class ProgramStudi extends CI_Controller {
 	public function index()
 	{
 		$this->load->library('session');
-        $user_session = $this->session->username;
-        // check session
-        if( $user_session != null || $user_session != ''){
-            $data['userlogged'] = $user_session;
+			$user_session = $this->session->username;
+			$user_role = $this->session->role;
+			// check session
+			if( $user_session != null || $user_session != ''){
+				$data['userlogged'] = $user_session;
+				$data['role'] = $user_role;
 				$this->load->view('resource');
 				$this->load->view('nav', $data);
 				$this->load->view('dash_program_studi');
-        } else {
-            // navigate to login
-            redirect(base_url());
-        }
+			} else {
+				// navigate to login
+				redirect(base_url());
+			}
 	}
 	// get data all program studi
 	public function get_all_programstudi(){

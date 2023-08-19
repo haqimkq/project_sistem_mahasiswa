@@ -77,9 +77,11 @@ class Kota extends CI_Controller {
     public function index() {
         $this->load->library('session');
         $user_session = $this->session->username;
+        $user_role = $this->session->role;
         // check session
         if( $user_session != null || $user_session != ''){
             $data['userlogged'] = $user_session;
+            $data['role'] = $user_role;
             $data['url'] = '../assets/icon.png';
             $this->load->view('resource2', $data);
             $this->load->view('nav', $data);

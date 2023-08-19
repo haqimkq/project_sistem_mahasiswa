@@ -24,8 +24,10 @@ class Dashboard extends CI_Controller {
 		$this->load->library('session');
 		// check session
 		$user_session = $this->session->username;
+		$user_role = $this->session->role;
 		if( $user_session != null || $user_session != ''){
 			$data['userlogged'] = $user_session;
+			$data['role'] = $user_role;
 			$this->load->view('resource2', $data);
 			$this->load->view('nav', $data);
 			$this->load->view('welcome_message', $data);
