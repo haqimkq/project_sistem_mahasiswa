@@ -65,6 +65,8 @@
 <div id="apps"></div>
 <script type="text/babel">
    const App = () => {
+      const role = '<?=$role?>'
+      const listRole = ['Administrator']
       const [showMenu, setShowMenu] = useState(false)
       const handleLogOut = () => {
          let confirm = window.confirm('Anda yakin ingin Log Out?')
@@ -102,12 +104,20 @@
                   </a>
                   <div className="menus">
                      <a href="<?= base_url() ?>index.php/DosenMahasiswa"><i className="fas fa-users"></i> Dosen & Taruna </a>
-                     <a href="<?= base_url() ?>index.php/IjazahTranskrip"><i className="fas fa-file-signature"></i> Ijazah & Transkrip</a>
-                     <a href="<?= base_url() ?>index.php/Penilaian"><i className="fas fa-award"></i> Penilaian</a>
+                     {role == 'Administrator' || role == 'Akademik' ? (
+                        <a href="<?= base_url() ?>index.php/IjazahTranskrip"><i className="fas fa-file-signature"></i> Ijazah & Transkrip</a>
+                     ) : false}
+                     {role == 'Administrator' || role == 'Unit Prodi' ? (
+                        <a href="<?= base_url() ?>index.php/Penilaian"><i className="fas fa-award"></i> Penilaian</a>
+                     ) : false}
                      <a href="<?= base_url() ?>index.php/MataKuliah"><i className="fas fa-book"></i> Mata Kuliah</a>
-                     <a href="<?= base_url() ?>index.php/ProgramStudi"><i className="fas fa-graduation-cap"></i> Program Studi</a>
+                     {role == 'Administrator' || role == 'Akademik' ? (
+                        <a href="<?= base_url() ?>index.php/ProgramStudi"><i className="fas fa-graduation-cap"></i> Program Studi</a>
+                     ) : false}
                      <a href="<?= base_url() ?>index.php/Kota"><i className="fas fa-building"></i> Kota</a>
-                     <a href="<?= base_url() ?>index.php/Users"><i className="fas fa-user"></i> User</a>
+                     {role == 'Administrator' ? (
+                        <a href="<?= base_url() ?>index.php/Users"><i className="fas fa-user"></i> User</a>
+                     ) : false}
                   </div>
                </div>
                <button 

@@ -63,14 +63,19 @@
 		color: rgb(100,100,100);
 		margin-top: 0.4em;
 	}
+	.grayscale{
+		filter: grayscale(100%);
+	}
 </style>
 <div id="appss"></div>
 <script type="text/babel">
 	const { useState, useEffect } = React
 	const App = () => {
+		const role = '<?= $role ?>'
 		const listMenu = [
 			{
 				title: "Dosen & Taruna",
+				access: ['Administrator', 'Unit Prodi', 'Akademik'],
 				desc: "Manage data Taruna dan Dosen",
 				img: "dosenmahasiswa.svg",
 				url: "index.php/DosenMahasiswa"
@@ -78,36 +83,42 @@
 			{
 				title: "Ijazah & Transkrip",
 				desc: "Manage data pencetakan Ijazah dan Transkrip",
+				access: ['Administrator', 'Akademik'],
 				img: "ijazahtranskrip.svg",
 				url: "index.php/IjazahTranskrip"
 			},
 			{
 				title: "Penilaian",
 				desc: "Manage data Penilaian Taruna",
+				access: ['Administrator', 'Unit Prodi'],
 				img: "penilaian.svg",
 				url: "index.php/Penilaian"
 			},
 			{
 				title: "Mata Kuliah",
 				desc: "Manage data Mata Kuliah",
+				access: ['Administrator', 'Unit Prodi', 'Akademik'],
 				img: "matakuliah.svg",
 				url: "index.php/MataKuliah"
 			},
 			{
 				title: "Program Studi",
 				desc: "Manage data Program Studi",
+				access: ['Administrator', 'Akademik'],
 				img: "programstudi.svg",
 				url: "index.php/ProgramStudi"
 			},
 			{
 				title: "Kota",
 				desc: "Manage data Kota",
+				access: ['Administrator', 'Unit Prodi', 'Akademik'],
 				img: "kota.svg",
 				url: "index.php/Kota"
 			},
 			{
 				title: "User",
 				desc: "Manage data User",
+				access: ['Administrator'],
 				img: "team.png",
 				url: "index.php/Users"
 			},
@@ -121,10 +132,10 @@
 						{/*<img src="../assets/dashboard.png" alt="illustration" />*/}
 						<div className="menuall">
 							{
-								listMenu.map((it, index) => (
+								listMenu.filter(it => it.access.includes(role)).map((it, index) => (
 									<a key={index} href={`<?=base_url()?>${it.url}`}>
 										<div className="boxcards">
-											<img src={`<?=base_url()?>/assets/${it.img}`} alt="" height="100" />
+											<img src={`<?=base_url()?>/assets/${it.img}`} alt="" height="100" className={!it.access.includes(role) ? 'grayscale' : ''}/>
 											<div>
 												<h3>{it.title}</h3>
 												<p>{it.desc}</p>
