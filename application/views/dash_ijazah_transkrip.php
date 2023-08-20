@@ -670,7 +670,7 @@
 						</div>
 						<div>
 							<p className="bookman"><strong>: {tarunanama.toUpperCase()}</strong></p>
-							<p className="bookman">: {namakota.toUpperCase()}, {tanggal_lahir} </p>
+							<p className="bookman">: {namakota.toUpperCase()}, {tanggal_indonesia(tanggal_lahir)} </p>
 							<p className="bookman">: {nim} </p>
 							<p className="bookman">: {prodipendidikan.toUpperCase()} </p>
 							<p className="bookman">: {prodiname.toUpperCase()} </p>
@@ -689,19 +689,19 @@
 								<img src="<?=base_url() ?>assets/barcode.png" alt="barcode" width="80" />
 							</div>
 							<div>
-								<p>{wadir.toUpperCase()}</p>
+								<p>{wadir}</p>
 								<p>NIP. {wadirnip}</p>
 							</div>
 						</div>
 						<div className="text-center">
-							<p className="bookman">Palembang, {tanggal_ijazah}</p>
+							<p className="bookman">Palembang, {tanggal_indonesia(tanggal_ijazah)}</p>
 							<p className="cambria">DIREKTUR</p>
 							<p>POLITEKNIK TRANSPORTASI SUNGAI DANAU DAN PENYEBERANGAN PALEMBANG</p>
 							<div className="bots">
 								<img src="<?=base_url() ?>assets/barcode.png" alt="barcode" width="80" />
 							</div>
 							<div>
-								<p>{dir.toUpperCase()}</p>
+								<p>{dir}</p>
 								<p>NIP. {dirnip}</p>
 							</div>
 						</div>
@@ -795,10 +795,10 @@
 						<div>
 							<p className="cambria">: {tarunanama}</p>
 							<p className="cambria">: {nim}</p>
-							<p className="cambria">: {namakota}, {tanggal_lahir}</p>
+							<p className="cambria">: {namakota}, {tanggal_indonesia(tanggal_lahir)}</p>
 							<p className="cambria">: {prodipendidikan.toUpperCase()} {prodiname.toUpperCase()}</p>
 							<p className="cambria">: TERAKREDITASI {akreditasi.toUpperCase()}</p>
-							<p className="cambria">: {tanggal_yudisium}</p>
+							<p className="cambria">: {tanggal_indonesia(tanggal_yudisium)}</p>
 						</div>
 					</div>
 					{/* bagian transkrip */}
@@ -854,12 +854,12 @@
 									<tr>
 										<td colSpan="5" className="titlesm cambria">SEMESTER III</td>
 									</tr>
-									{ // semester III
+									{ // Semester II
 										listNilai.filter(it => it.semester == "Semester III").length ? listNilai.filter(it => it.semester == 'Semester III').map((it, index) => (
 											<tr key={index}>
 												<td>{it.urutan}</td>
 												<td>{it.kode}</td>
-												<td calass="lefts cambria">{it.matakuliah}</td>
+												<td className="lefts cambria">{it.matakuliah}</td>
 												<td>{it.sks}</td>
 												<td>{it.nilai_huruf}</td>
 											</tr>
@@ -939,23 +939,6 @@
 										)
 									}
 									<tr>
-										<td colSpan="5" className="titlesm cambria">UJIAN AKHIR PROGRAM STUDI</td>
-									</tr>
-									{ // semester VI
-										listNilai.filter(it => it.semester == "Ujian Akhir Program Studi").length ? listNilai.filter(it => it.semester == 'Ujian Akhir Program Studi').map((it, index) => (
-											<tr key={index}>
-												<td>{it.urutan}</td>
-												<td>{it.kode}</td>
-												<td className="lefts cambria" colSpan="2">{it.matakuliah}</td>
-												<td>{it.nilai_huruf}</td>
-											</tr>
-										)) : (
-											<tr>
-												<td colSpan="5">Tidak ada mata kuliah.</td>
-											</tr>
-										)
-									}
-									<tr>
 										<td colSpan="5" className="titlesm cambria">JUDUL KERTAS KERJA WAJIB</td>
 									</tr>
 									<tr>
@@ -990,12 +973,12 @@
 								<img src="<?=base_url() ?>assets/barcode.png" alt="barcode" width="80" />
 							</div>
 							<div>
-								<p className="calibri">{wadir.toUpperCase()}</p>
+								<p className="calibri">{wadir}</p>
 								<p className="calibri">NIP. {wadirnip}</p>
 							</div>
 						</div>
 						<div className="text-center">
-							<p className="cambria">Palembang, {tanggal_ijazah}</p>
+							<p className="cambria">Palembang, {tanggal_indonesia(tanggal_ijazah)}</p>
 							<p className="calibri">DIREKTUR</p>
 							<p className="calibri">POLITEKNIK TRANSPORTASI SUNGAI DANAU DAN PENYEBERANGAN PALEMBANG</p>
 							<div className="bots fotobox">
@@ -1003,7 +986,7 @@
 								<img className="prof" src={`<?=base_url()?>upload/${foto != "" ? foto : 'Pasfoto3x4.jpg'}`} alt="fotoprofil" />
 							</div>
 							<div>
-								<p className="calibri">{dir.toUpperCase()}</p>
+								<p className="calibri">{dir}</p>
 								<p className="calibri">NIP. {dirnip}</p>
 							</div>
 						</div>
