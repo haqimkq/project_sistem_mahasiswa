@@ -46,6 +46,10 @@
 	.nopad{
 		padding-top: 0.5em;
 	}
+	.redinfo{
+		color: crimson;
+		opacity: 1;
+	}
 </style>
 <div id="appss"></div>
 <script type="text/babel">
@@ -272,6 +276,7 @@
 		const { setShowForm, setListData, refreshData, editedData, type, listKota, listProdi } = props
 		const [foto, setFoto] = useState(null)
 		const [successMessage, setSuccessMessage] = useState(null)
+		const [isIdTrue, setIsIdTrue] = useState(true)
 		const handleFotoChange = (e) => setFoto(e.target.files[0])  // Menyimpan file foto yang dipilih dalam state};
 		// on submit form add new program studi 
 		const handleSubmit = (e, type, editedData) => {
@@ -303,6 +308,11 @@
 				}
 			})
 		}
+		// validate nik
+		const validateNIK = val => {
+			let lengthTrue = val.length > 16
+			lengthTrue && val != '' ? setIsIdTrue(true) : setIsIdTrue(false)  
+		}
 		useEffect(() => {
 			if(type == 'edit'){
 				// update nilai elemen berdasarkan key value
@@ -333,11 +343,15 @@
 							<input name="nomor_taruna" type="text" placeholder="e.g. 220401020003" required />
 						</div>
 						<div className="formel">
-							<label htmlFor="tempat_lahir">Tempat Lahir</label>
-							<input name="tempat_lahir" placeholder="e.g. Palembang" required type="text" />
+							<label htmlFor="nik">NIK {!isIdTrue ? (<span className="redinfo"> * min 16 character's</span>) : ''}</label>
+							<input name="nik" placeholder="Should be 16 character's " required type="number" onChange={e => validateNIK(e.target.value)} />
 						</div>
 					</div>
 					<div className="wrap nopad">
+						<div className="formel">
+							<label htmlFor="tempat_lahir">Tempat Lahir</label>
+							<input name="tempat_lahir" placeholder="e.g. Palembang" required type="text" />
+						</div>
 						<div className="formel">
 							<label htmlFor="tanggal_lahir">Tanggal Lahir</label>
 							<input name="tanggal_lahir" type="date" placeholder="e.g. Informatika" required />

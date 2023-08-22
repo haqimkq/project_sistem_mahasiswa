@@ -27,7 +27,7 @@ class IjazahTranskrip_model extends CI_Model {
         return $this->db->insert('ijazah', $data);
     }
     public function get_all_ijazah(){
-        return $this->db->query("SELECT ijazah.*, pejabat.nama as wadir, dir.nama as dir, dir.nidn as dirnip, pejabat.nidn as wadirnip,  taruna.nama as tarunanama, prodi.nama as prodiname, taruna.nomor_taruna as nim, taruna.tanggal_lahir, prodi.program_pendidikan as prodipendidikan, prodi.akreditasi as akreditasi, prodi.sk_akreditasi as noakred, taruna.tempat_lahir as namakota, tr.id as transkripid, taruna.foto FROM `ijazah` 
+        return $this->db->query("SELECT ijazah.*, pejabat.nama as wadir, dir.nama as dir, dir.nidn as dirnip, pejabat.nidn as wadirnip,  taruna.nama as tarunanama, prodi.nama as prodiname, taruna.nomor_taruna as nim, taruna.tanggal_lahir, taruna.nik, prodi.program_pendidikan as prodipendidikan, prodi.akreditasi as akreditasi, prodi.sk_akreditasi as noakred, taruna.tempat_lahir as namakota, tr.id as transkripid, taruna.foto FROM `ijazah` 
         LEFT JOIN taruna 
         ON ijazah.taruna = taruna.id
         LEFT JOIN pejabat

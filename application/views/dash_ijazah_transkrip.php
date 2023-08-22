@@ -643,7 +643,7 @@
 	el.render(<App />)
 	// form ijazah
 	const FormIjazah = props => {
-		const { tarunanama, namakota, nim, prodiname, tanggal_lahir, tanggal_ijazah, wadir, dir, noakred, wadirnip, dirnip, gelar_akademik, prodipendidikan, akreditasi, nomor_seri, nomor_ijazah } = props.data
+		const { tarunanama, namakota, nim, prodiname, tanggal_lahir, tanggal_ijazah, wadir, dir, noakred, wadirnip, dirnip, gelar_akademik, prodipendidikan, akreditasi, nomor_seri, nomor_ijazah, nik } = props.data
 		const { hide, dataPejabat } = props
 		// get data direktur dan wadir
 		useEffect(() => {
@@ -664,6 +664,7 @@
 							<p className="bookman">Memberikan Ijazah Kepada </p>
 							<p className="bookman">Tempat dan Tanggal Lahir </p>
 							<p className="bookman">Nomor Taruna </p>
+							<p className="bookman">NIK </p>
 							<p className="bookman">Program Pendidikan </p>
 							<p className="bookman">Program Studi </p>
 							<p className="bookman">Status </p>
@@ -672,6 +673,7 @@
 							<p className="bookman"><strong>: {tarunanama.toUpperCase()}</strong></p>
 							<p className="bookman">: {namakota.toUpperCase()}, {tanggal_lahir} </p>
 							<p className="bookman">: {nim} </p>
+							<p className="bookman">: {nik} </p>
 							<p className="bookman">: {prodipendidikan.toUpperCase()} </p>
 							<p className="bookman">: {prodiname.toUpperCase()} </p>
 							<p className="bookman">: TERAKREDITASI <strong>"{akreditasi.toUpperCase()}"</strong> </p>
@@ -712,7 +714,7 @@
 	}
 	// form transkrip
 	const FormTranskrip = props => {
-		const { tarunanama, namakota, nim, prodiname, tanggal_lahir, tanggal_ijazah, wadir, dir, noakred, wadirnip, dirnip, gelar_akademik, prodipendidikan, akreditasi, nomor_seri, judul_kkw, nomor_ijazah, tanggal_yudisium, foto } = props.data
+		const { tarunanama, namakota, nim, prodiname, tanggal_lahir, tanggal_ijazah, wadir, dir, noakred, wadirnip, dirnip, gelar_akademik, prodipendidikan, akreditasi, nomor_seri, judul_kkw, nomor_ijazah, tanggal_yudisium, foto, nik } = props.data
 		const {hide, data, dataPejabat, allNilai} = props
 		// const [listNilai, setListNilai] = useState([])
 		const [listNilai, setListNilai] = useState([])
@@ -787,6 +789,7 @@
 						<div>
 							<p className="cambria">NAMA</p>
 							<p className="cambria">NOMOR TARUNA</p>
+							<p className="cambria">NIK</p>
 							<p className="cambria">TEMPAT / TANGGAL LAHIR</p>
 							<p className="cambria">JURUSAN / PROGRAM STUDI</p>
 							<p className="cambria">STATUS</p>
@@ -795,6 +798,7 @@
 						<div>
 							<p className="cambria">: {tarunanama}</p>
 							<p className="cambria">: {nim}</p>
+							<p className="cambria">: {nik}</p>
 							<p className="cambria">: {namakota}, {tanggal_lahir}</p>
 							<p className="cambria">: {prodipendidikan.toUpperCase()} {prodiname.toUpperCase()}</p>
 							<p className="cambria">: TERAKREDITASI {akreditasi.toUpperCase()}</p>

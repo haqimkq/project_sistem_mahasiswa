@@ -20,7 +20,7 @@ class DosenMahasiswa_model extends CI_Model {
         }
     }
     public function get_all_mahasiswa(){
-        return $this->db->query("SELECT mahasiswa.id, mahasiswa.nama, mahasiswa.nomor_taruna, mahasiswa.tempat_lahir, mahasiswa.tanggal_lahir, mahasiswa.program_studi, mahasiswa.foto, kota.nama as namakota, prodi.nama as namaprodi, prodi.program_pendidikan, prodi.akreditasi FROM `taruna` as mahasiswa 
+        return $this->db->query("SELECT mahasiswa.id, mahasiswa.nama, mahasiswa.nomor_taruna, mahasiswa.nik, mahasiswa.tempat_lahir, mahasiswa.tanggal_lahir, mahasiswa.program_studi, mahasiswa.foto, kota.nama as namakota, prodi.nama as namaprodi, prodi.program_pendidikan, prodi.akreditasi FROM `taruna` as mahasiswa 
         LEFT JOIN kota  as kota
         ON mahasiswa.tempat_lahir = kota.id
         LEFT JOIN program_studi as prodi
@@ -46,6 +46,7 @@ class DosenMahasiswa_model extends CI_Model {
     $nama = $data["nama"];
     $nomor_taruna = $data["nomor_taruna"];
     $tempat_lahir = $data["tempat_lahir"];
+    $nik = $data["nik"];
     $tanggal_lahir = $data["tanggal_lahir"];
     $program_studi = $data["program_studi"];
 
@@ -75,6 +76,7 @@ class DosenMahasiswa_model extends CI_Model {
         'nama' => $nama,
         'nomor_taruna' => $nomor_taruna,
         'tempat_lahir' => $tempat_lahir,
+        'nik' => $nik,
         'tanggal_lahir' => $tanggal_lahir,
         'program_studi' => $program_studi,
         'foto' => $foto
@@ -98,6 +100,7 @@ class DosenMahasiswa_model extends CI_Model {
         $nama = $data["nama"];
         $nomor_taruna = $data["nomor_taruna"];
         $tempat_lahir = $data["tempat_lahir"];
+        $nik = $data["nik"];
         $tanggal_lahir = $data["tanggal_lahir"];
         $program_studi = $data["program_studi"];
         // Proses unggah foto
@@ -125,6 +128,7 @@ class DosenMahasiswa_model extends CI_Model {
             'nama' => $nama,
             'nomor_taruna' => $nomor_taruna,
             'tempat_lahir' => $tempat_lahir,
+            'nik' => $nik,
             'tanggal_lahir' => $tanggal_lahir,
             'program_studi' => $program_studi,
             'foto' => $foto

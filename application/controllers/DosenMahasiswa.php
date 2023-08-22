@@ -95,6 +95,7 @@ class DosenMahasiswa extends CI_Controller {
 		$data['nama'] = $this->input->post('nama');
 		$data['nomor_taruna'] = $this->input->post('nomor_taruna');
 		$data['tempat_lahir'] = $this->input->post('tempat_lahir');
+		$data['nik'] = $this->input->post('nik');
 		$data['tanggal_lahir'] = $this->input->post('tanggal_lahir');
 		$data['program_studi'] = $this->input->post('program_studi');
 		$data['foto'] = $this->input->post('foto');
@@ -116,6 +117,7 @@ class DosenMahasiswa extends CI_Controller {
 		$data['nama'] = $this->input->post('nama');
 		$data['nomor_taruna'] = $this->input->post('nomor_taruna');
 		$data['tempat_lahir'] = $this->input->post('tempat_lahir');
+		$data['nik'] = $this->input->post('nik');
 		$data['tanggal_lahir'] = $this->input->post('tanggal_lahir');
 		$data['program_studi'] = $this->input->post('program_studi');
 		$data['foto'] = $this->input->post('foto');
