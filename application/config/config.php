@@ -23,8 +23,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost/ijazah/';
-// $config['base_url'] = 'https://kelompok3.poltransdp-palembang.ac.id/';
+$config['base_url'] = 'http://localhost/ijazah4/';
+// $config['base_url'] = 'https://ijazah.poltektranssdp-palembang.ac.id';
 /*
 |--------------------------------------------------------------------------
 | Index File
