@@ -34,7 +34,7 @@ class Nilai_model extends CI_Model {
     }
     // get all data penilaian
     public function get_all_penilaian(){
-        return $this->db->query("SELECT nilai.id, taruna.nama as taruna, taruna.id as tarunaid, nilai.nilai_angka, nilai.nilai_huruf, matakuliah.matakuliah, matakuliah.id as matakuliahid FROM nilai LEFT JOIN taruna ON taruna.id = nilai.taruna LEFT JOIN matakuliah ON matakuliah.id = nilai.matakuliah")->result_array();
+        return $this->db->query("SELECT nilai.id, taruna.nomor_taruna as nim, taruna.nama as taruna, taruna.id as tarunaid, nilai.nilai_angka, nilai.nilai_huruf, matakuliah.matakuliah, matakuliah.id as matakuliahid FROM nilai LEFT JOIN taruna ON taruna.id = nilai.taruna LEFT JOIN matakuliah ON matakuliah.id = nilai.matakuliah")->result_array();
     }
     public function update($id, $data) {
         $this->db->where('id', $id);

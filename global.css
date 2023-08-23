@@ -225,6 +225,11 @@ table>tbody>tr:hover {
    flex: 1;
 }
 
+.wsmall {
+   flex: unset;
+   max-width: 10em;
+}
+
 .nowrap {
    padding-top: 0.5em !important;
 }

@@ -130,6 +130,7 @@
 				destroy: true,
 				data: listData,
 				columns: [
+					{ data: 'nim', title: 'NPT' },
 					{ data: 'taruna', title: 'Taruna' },
 					{ data: 'nilai_angka', title: 'Nilai Angka' },
 					{ data: 'nilai_huruf', title: 'Nilai Huruf' },
@@ -279,14 +280,14 @@
 								))}
 							</select>
 						</div>
-						<div className="formel">
+						<div className="formel wsmall">
 							<label htmlFor="penilaian">Nilai Angka</label>
 							<input name="nilai_angka" type="num" placeholder="e.g. 40" required />
 						</div>
-						<div className="formel">
+						<div className="formel wsmall">
 							<label htmlFor="Nilai_Huruf">Nilai Huruf</label>
 							<select required name="nilai_huruf">
-								<option value="">--- Pilih Nilai Huruf ---</option>
+								<option value="">-- Pilih --</option>
 								<option value="A">A</option>
 								<option value="AB">AB</option>
 								<option value="B">B</option>
@@ -301,7 +302,7 @@
 							<select required name="matakuliah">
 								<option value="">--- Pilih Mata Kuliah ---</option>
 								{listMataKuliah.map((it, index) => (
-									<option key={index} value={it.id}>{it.matakuliah}</option>
+									<option key={index} value={it.id}>{it.kode} - {it.matakuliah}</option>
 								))}
 							</select>
 						</div>
