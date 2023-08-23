@@ -135,6 +135,7 @@
 					{ data: 'nilai_angka', title: 'Nilai Angka' },
 					{ data: 'nilai_huruf', title: 'Nilai Huruf' },
 					{ data: 'matakuliah', title: 'Mata Kuliah' },
+					{ data: 'semester', title: 'Semester' },
 					{ data: 'id', title: 'Action', render: function(data){
 						return `
 							<i title="Edit Mata Kuliah" class="fa-solid fa-pen-to-square btn-edit" data-id="${data}"></i>

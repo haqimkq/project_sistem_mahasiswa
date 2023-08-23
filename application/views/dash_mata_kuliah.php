@@ -59,9 +59,23 @@
 	const { useState, useEffect } = React
 	const App = () => {
 		const [showForm, setShowForm] = useState(null)
+		const [listProdi, setListProdi] = useState([])
 		const [listData, setListData] = useState([])
 		const [editedData, setEditedData] = useState(null)
 		const [showMessageSuccess, setShowMessageSuccess] = useState(false)
+		// get data program studi
+		const getAllProgramStudi = () => {
+			$.ajax({
+				url: "<?=base_url()?>index.php/ProgramStudi/get_all_programstudi",
+				method: 'GET',
+				success: data => {
+					setListProdi(JSON.parse(data))
+				},
+				error: () => {
+					alert('Gagal mendapatkan data program studi')
+				}
+			})
+		}
  		// get data from database
 		const getAllDataMataKuliah = () => {
 			$.ajax({
@@ -109,6 +123,7 @@
 					{ data: 'matakuliah', title: 'Mata Kuliah' },
 					{ data: 'sks', title: 'SKS' },
 					{ data: 'semester', title: 'Semester' },
+					{ data: 'prodi', title: 'Program Studi' },
 					{ 
 						data: null,
     					render: function (data, type, row) {
@@ -136,6 +151,7 @@
 		// mendapatkan data dari database saat pertama kali page loaded
 		useEffect(() => {
 			getAllDataMataKuliah()
+			getAllProgramStudi()
 		}, [])
 		return (
 			<div id="container">
@@ -166,6 +182,7 @@
 					{
 						showForm != null ? (
 							<FormInput 
+								listProdi={listProdi}
 								setShowForm={setShowForm} 
 								setListData={setListData} 
 								refreshData={getAllDataMataKuliah}
@@ -186,7 +203,7 @@
 	el.render(<App />)
 	// form input mata kuliah
 	const FormInput = props => {
-		const { setShowForm, setListData, refreshData, editedData, type } = props
+		const { setShowForm, setListData, refreshData, editedData, type, listProdi } = props
 		const [successMessage, setSuccessMessage] = useState(null)
 		// on submit form add new mata kuliah
 		const handleSubmit = (e, type, editedData) => {
@@ -242,11 +259,22 @@
 							<label htmlFor="matakuliah">Mata Kuliah</label>
 							<input name="matakuliah" type="text" placeholder="e.g. Pemrograman Web II" required />
 						</div>
-					</div>
-					<div className="wrap nowrap">
 						<div className="formel">
 							<label htmlFor="sks">SKS</label>
 							<input name="sks" type="num" placeholder="e.g. 19" required />
+						</div>
+					</div>
+					<div className="wrap nowrap">
+						<div className="formel">
+							<label htmlFor="prodi">Program Studi</label>
+							<select required name="prodi">
+								<option value="">--- Pilih Program Studi ---</option>
+								{
+									listProdi.map((it, index) => (
+										<option key={index} value={it.nama}>{it.nama}</option>
+									))
+								}
+							</select>
 						</div>
 						<div className="formel fulls">
 							<label htmlFor="semester">Semester</label>

@@ -13,6 +13,7 @@ class MataKuliah_model extends CI_Model {
             'kode' => $data["kode"],
             'matakuliah' => $data["matakuliah"],
             'sks' => $data["sks"],
+            'prodi' => $data["prodi"],
             'semester' => $data["semester"],
         );
         // return $this->db->insert('mata_kuliah', $data);

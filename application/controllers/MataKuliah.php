@@ -56,6 +56,7 @@ public function __construct(){
 		$data['kode'] = $this->input->post('kode');
 		$data['matakuliah'] = $this->input->post('matakuliah');
 		$data['sks'] = $this->input->post('sks');
+		$data['prodi'] = $this->input->post('prodi');
 		$data['semester'] = $this->input->post('semester');
 		$processadd = $this->MataKuliah_model->create($data);
 		echo json_encode($processadd);
@@ -76,6 +77,7 @@ public function update_matakuliah() {
 	$data['kode'] = $this->input->post('kode');
 	$data['matakuliah'] = $this->input->post('matakuliah');
 	$data['sks'] = $this->input->post('sks');
+	$data['prodi'] = $this->input->post('prodi');
 	$data['semester'] = $this->input->post('semester');
 	
 	$processedit = $this->MataKuliah_model->update($id, $data);
